@@ -107,7 +107,7 @@ export const Header = () => {
         </label>
         <label>
           Cantidad de Meses:
-          <select
+          <select id="meses"
             name="meses"
             value={meses}
             onChange={handleChange}
@@ -124,7 +124,7 @@ export const Header = () => {
       </form>
       
       {mostrarValores && (
-        <div>
+        <div id="sep">
           <p>Nombre: {nombre}</p>
           <p>Apellido: {apellido}</p>
           <p>Curso seleccionado: {cursoTexto}</p>
