@@ -59,7 +59,7 @@ export const Header = () => {
         </label>
         <label>
           Cantidad de Meses:
-          <select
+          <select id="meses"
             name="meses"
             value={meses}
             onChange={handleChange}
