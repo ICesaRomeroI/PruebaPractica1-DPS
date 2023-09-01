@@ -36,26 +36,22 @@ export const Header = () => {
 
     switch (meses) {
       case "2":
-      case "3":
         descuentoCalculado = 0.1; // 10% de descuento
     
         break;
-      case "4":
-      case "5":
+      case "3":
         descuentoCalculado = 0.2; // 20% de descuento
 
         break;
-      case "6":
-      case "7":
+      case "4":
         descuentoCalculado = 0.3; // 30% de descuento
 
         break;
-      case "8":
-      case "9":
+      case "5":
         descuentoCalculado = 0.4; // 40% de descuento
 
         break;
-      case "10":
+      case "6":
         descuentoCalculado = 0.5; // 50% de descuento
 
         break;
@@ -75,7 +71,6 @@ export const Header = () => {
 };
   return (
     <div>
-        <h1>ACADEMIA DE IDIOMAS</h1>
       <form onSubmit={handleSubmit}>
         <label>
           Nombre:
@@ -124,7 +119,7 @@ export const Header = () => {
         <button type="submit">Capturar</button>
       </form>
       
-      {mostrarValores && (
+        {mostrarValores && (
         <div id="sep">
           <p>Nombre: {nombre}</p>
           <p>Apellido: {apellido}</p>
@@ -133,6 +128,8 @@ export const Header = () => {
           <p>Descuento aplicado: {descuento * 100}%</p>
           <p>Total a Pagar: ${total}</p>
         </div>
+      )}
+    </div>
       )}
     </div>
   );
