@@ -3,8 +3,9 @@ import React, { useState } from "react";
 export const Header = () => {
   const [nombre, setNombre] = useState('');
   const [apellido, setApellido] = useState('');
-  const [curso, setCurso] = useState('1'); // Inicializar con el valor predeterminado
-  const [meses, setMeses] = useState('1'); // Inicializar con el valor predeterminado
+  const [curso, setCurso] = useState('1');
+  const [meses, setMeses] = useState('1');
+  const [mostrarValores, setMostrarValores] = useState(false); // Estado para controlar la visibilidad de los valores
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -21,11 +22,7 @@ export const Header = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('Nombre capturado:', nombre);
-    console.log('Apellido capturado:', apellido);
-    console.log('Curso seleccionado:', curso);
-    console.log('Meses seleccionados:', meses);
-    // Puedes realizar otras acciones con los valores capturados aquí.
+    setMostrarValores(true); // Habilitar la visualización de valores al hacer clic en el botón
   };
 
   return (
@@ -62,7 +59,7 @@ export const Header = () => {
         </label>
         <label>
           Cantidad de Meses:
-          <select id="meses"
+          <select
             name="meses"
             value={meses}
             onChange={handleChange}
@@ -75,11 +72,20 @@ export const Header = () => {
             <option value="6">10 o más meses</option>
           </select>
         </label>
-
         <button type="submit">Capturar</button>
       </form>
+      
+      {/* Mostrar los valores capturados en el componente OtroComponente solo si mostrarValores es verdadero */}
+      {mostrarValores && (
+        <div>
+          <p>Nombre: {nombre}</p>
+          <p>Apellido: {apellido}</p>
+          <p>Curso seleccionado: {curso}</p>
+          <p>Meses seleccionados: {meses}</p>
+        </div>
+      )}
     </div>
   );
-}
+};
 
 export default Header;
