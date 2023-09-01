@@ -75,6 +75,7 @@ export const Header = () => {
 };
   return (
     <div>
+        <h1>ACADEMIA DE IDIOMAS</h1>
       <form onSubmit={handleSubmit}>
         <label>
           Nombre:
